@@ -1,0 +1,1 @@
+﻿{"inkVersion":21,"root":[[{"->":"main"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"main":["^YAY!","\n","^You're a natural!","\n","^Okay! Back to the lake we go.","\n","ev",{"x()":"finishManateeGame"},"pop","/ev","\n","end",{"#f":1}],"finishManateeGame":["ev","void","/ev","~ret",{"#f":1}],"#f":1}],"listDefs":{}}

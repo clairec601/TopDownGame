@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/HomeScreen.unity
+    guid: 0a8a533f44e6447e18a0c10abd33dabe
+  - enabled: 1
+    path: Assets/Scenes/MainGame.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/BreadGame.unity
+    guid: 6d69b15b3e16c4b7294bed1decd41399
+  - enabled: 1
+    path: Assets/Scenes/BigDinosaurGame.unity
+    guid: 5da028b330e764248b35e5ba0d2009b9
+  - enabled: 1
+    path: Assets/Scenes/EndScreen.unity
+    guid: 6f5a8f7eaf9104323abc0cf177ae2ed7
+  - enabled: 1
+    path: Assets/Scenes/InteractHomeScreen.unity
+    guid: eded3e1c0a3ee49f493299e05eee8d22
+  - enabled: 1
+    path: Assets/Scenes/ManateeGame.unity
+    guid: e322f6d5760c14bbca893f83139ab003
+  m_configObjects: {}

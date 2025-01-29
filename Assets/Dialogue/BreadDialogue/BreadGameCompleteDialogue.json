@@ -1,0 +1,1 @@
+﻿{"inkVersion":21,"root":[[{"->":"main"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"main":["^Yay! You made it!","\n","ev",{"x()":"finishBreadGame"},"pop","/ev","\n","^Okay! I think it's time to head back heh. Let's talk more there!","\n","end",{"#f":1}],"finishBreadGame":["ev","void","/ev","~ret",{"#f":1}],"#f":1}],"listDefs":{}}
