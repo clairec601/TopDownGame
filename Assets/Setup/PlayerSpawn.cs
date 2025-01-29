@@ -20,6 +20,12 @@ public class PlayerSpawn : MonoBehaviour
         }
     }
 
+    void Start() {
+        if (QuestManager.instance.CheckState("Ramen").Equals(QuestState.FINISHED)){
+            ramen.transform.position = ramenSpawnLocation.transform.position;
+        }
+    }
+
     void Update()
     {
         playerPosition = player.transform.position;

@@ -21,11 +21,10 @@ public class TurtleClickScript : MonoBehaviour
          RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction); //returns raycast
 
         if (hit.collider != null) {
-            if (hit.collider.gameObject.tag == "Turtle"){
+            if (hit.collider.gameObject.tag == "Turtle"){}
                 turtleAnim.SetBool("isShakingTurtle", true);
                 turtleCount++;
-            }
-            if (turtleCount >= 20){
+            if (turtleCount >= 15){
                 turtleAnim.SetBool("isTurtleAfterIdle", true);
                 turtleAnim.SetBool("isShakingTurtle", false);
             }

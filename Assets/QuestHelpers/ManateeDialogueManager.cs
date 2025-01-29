@@ -10,19 +10,22 @@ public class ManateeDialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextAsset inkJSON;
+    private bool waitOnce;
     
     public bool isPlaying { get; private set; }
     private Story currentStory; //uses Ink
         
 
     private void Start(){
+        waitOnce = false;
         isPlaying = false;
         dialoguePanel.SetActive(false);
     }
 
     private void Update(){
-        if (RhythmGameNotes.lastWasDestroyed){
+        if (RhythmGameNotes.lastWasDestroyed && !waitOnce){
             EnterDialogue(inkJSON);
+            waitOnce = true;
         }
 
         if (!isPlaying){

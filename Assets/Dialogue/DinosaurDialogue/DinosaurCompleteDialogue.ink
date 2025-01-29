@@ -4,6 +4,7 @@ EXTERNAL changeSprite(character)
 -> main
 
 === main ===
+Hm, this cloud sure is keeping me cool.
 + [(Pour your spring water into the cloud.)]
     -> Pour
        

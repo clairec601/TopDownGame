@@ -49,9 +49,8 @@ public class InteractableDialogue : MonoBehaviour
         if (QuestManager.finishedCount == 11){
             canReturn = true;
         }
-
-        if (this.gameObject.tag == "Bed" && isColliding && Input.GetKeyDown(KeyCode.Space) && !DialogueManager.instance.isPlaying && canReturn){
-            DialogueManager.instance.EnterDialogue(inkJSON);
+        if (this.gameObject.tag == "Bed" && !canReturn){
+            dialogueTrigger.SetActive(false);
         }
         else if (isColliding && Input.GetKeyDown(KeyCode.Space) && !DialogueManager.instance.isPlaying){
             DialogueManager.instance.EnterDialogue(inkJSON);

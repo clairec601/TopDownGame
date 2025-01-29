@@ -14,6 +14,7 @@ public class HamsterDialogueManager : MonoBehaviour
     public bool isPlaying { get; private set; }
     public static bool hamsterIsPlaced;
     public static bool hamsterWasMoved;
+    Vector3 position;
     private Story currentStory; //uses Ink
         
 
@@ -21,6 +22,10 @@ public class HamsterDialogueManager : MonoBehaviour
         isPlaying = false;
         hamsterIsPlaced = false;
         dialoguePanel.SetActive(false);
+
+        if (QuestManager.instance.CheckState("Hamster").Equals(QuestState.FINISHED)){
+            hamster.transform.position = position;
+        }
     }
 
     private void Update(){
@@ -32,12 +37,14 @@ public class HamsterDialogueManager : MonoBehaviour
                 Vector3 position = Input.mousePosition;
                 position.z = Camera.main.nearClipPlane;
                 hamster.transform.position = Camera.main.ScreenToWorldPoint(position);
+                position = hamster.transform.position;
                 hamsterWasMoved = true;
             }
             else if (hit.collider.gameObject.tag == "Daisy"){
                 Vector3 position = Input.mousePosition;
                 position.z = Camera.main.nearClipPlane;
                 hamster.transform.position = Camera.main.ScreenToWorldPoint(position);
+                position = hamster.transform.position;
                 EnterDialogue(cantPlaceInkJSON);
             }
         }

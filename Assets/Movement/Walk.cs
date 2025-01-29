@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+
 
 public class Walk : MonoBehaviour
 {
     public GameObject player;
     Animator anim;
     Rigidbody2D rb;
-    float moveForce = 4f;
+    float moveForce = 2f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,10 @@ public class Walk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (SceneManager.GetActiveScene().name == "InteractHomeScreen"){
+            moveForce = 4f;
+        }
         if (DialogueManager.instance.isPlaying){
             rb.velocity = Vector2.zero;
         }

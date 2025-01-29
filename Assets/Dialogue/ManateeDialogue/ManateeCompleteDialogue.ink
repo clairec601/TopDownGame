@@ -13,7 +13,7 @@ Have you danced before?
 === Reply ===
 ~ finishQuest("Manatee")
 Hehe, wasn't it great?
-Moving to the beat, swaying to the music...
+Even if there's no music, moving to your own beat, making up a melody in your head...
 What's not to love?
 -> END
 

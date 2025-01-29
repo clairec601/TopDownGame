@@ -15,6 +15,7 @@ public class SwitchSprites : MonoBehaviour
     [SerializeField] private GameObject banana;
     [SerializeField] private GameObject dinosaur;
     [SerializeField] private GameObject ramen;
+    [SerializeField] private GameObject turtle;
 
     private int mainCharCount = 0; //switch between having socks and not having socks
     private int bearCount = 0; 
@@ -29,7 +30,7 @@ public class SwitchSprites : MonoBehaviour
     Animator bananaAnim;
     Animator dinosaurAnim;
     Animator ramenAnim;
-
+    Animator turtleAnim;
     private void Awake(){
         instance = this;
         if (Manager.bigDinosaurGameComplete){
@@ -50,6 +51,46 @@ public class SwitchSprites : MonoBehaviour
         bananaAnim = banana.GetComponent<Animator>();
         dinosaurAnim = dinosaur.GetComponent<Animator>();
         ramenAnim = ramen.GetComponent<Animator>();
+        turtleAnim = turtle.GetComponent<Animator>();
+
+
+        if (QuestManager.instance.CheckState("Pig").Equals(QuestState.FINISHED)){
+            pigAnim.SetBool("isPigAfterIdle", true);
+        }
+        if (QuestManager.instance.CheckState("Bread").Equals(QuestState.FINISHED)){
+            breadAnim.SetBool("isBreadAfterIdle", true);
+        }
+        if (QuestManager.instance.CheckState("Big Dinosaur").Equals(QuestState.FINISHED)){
+            bigDinosaurAnim.SetBool("isBigDinosaurAfterIdle", true);
+        }
+        if (QuestManager.instance.CheckState("Otter").Equals(QuestState.FINISHED)){
+            otterAnim.SetBool("isOtterAfterIdle", true);
+        }
+        if (QuestManager.instance.CheckState("Banana").Equals(QuestState.FINISHED)){
+            bananaAnim.SetBool("isBananaAfterIdle", true);
+        }
+        if (QuestManager.instance.CheckState("Ramen").Equals(QuestState.FINISHED)){
+            ramenAnim.SetBool("isRamenAfterIdle", true);
+        }
+        if (QuestManager.instance.CheckState("Bear").Equals(QuestState.FINISHED)){
+            bearAnim.SetBool("isBearAfterIdle", true);
+        }
+        if (QuestManager.instance.CheckState("Dinosaur").Equals(QuestState.FINISHED)){
+            dinosaurAnim.SetBool("isDinosaurAfterIdle", true);
+            dinosaurAnim.SetBool("isDinosaurIdle", false);
+        }
+        if (QuestManager.instance.CheckState("Hamster").Equals(QuestState.FINISHED)){
+            hamsterAnim.SetBool("isHamsterAfterIdle", true);
+        }
+        if (QuestManager.instance.CheckState("Turtle").Equals(QuestState.FINISHED)){
+            turtleAnim.SetBool("isTurtleAfterIdle", true);
+            turtleAnim.SetBool("isTurtleIdle", false);
+        }
+
+        if (QuestManager.instance.CheckState("Dinosaur").Equals(QuestState.IN_PROGRESS)){
+            dinosaurAnim.SetBool("isDinosaurBetweenIdle", true);
+            dinosaurAnim.SetBool("isDinosaurIdle", false);
+        }
     }
     public void switchSprites(string character){
         if (character.Equals("mainChar") && mainCharCount == 0){
@@ -106,6 +147,7 @@ public class SwitchSprites : MonoBehaviour
             dinosaurAnim.SetBool("isDinosaurBetweenIdle", false);
             dinosaurAnim.SetBool("isDinosaurAfterIdle", true);
         }
+
         if ((character.Equals("ramen"))){
             ramenAnim.SetBool("isRamenAfterIdle", true);
         }

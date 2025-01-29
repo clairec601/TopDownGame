@@ -9,7 +9,7 @@ public class MainCharDialogueManager : MonoBehaviour
 {
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
-    [SerializeField] private TextAsset inkJSON;
+    [SerializeField] private TextAsset finishInkJSON;
     public bool isPlaying { get; private set; }
     private bool waitOnce;
 
@@ -66,9 +66,9 @@ public class MainCharDialogueManager : MonoBehaviour
     }
 
     private IEnumerator Wait(){  
-        yield return new WaitForSeconds(5);
-        if (waitOnce == false){
-            EnterDialogue(inkJSON);
+        yield return new WaitForSeconds(3);
+        if (!waitOnce){
+            EnterDialogue(finishInkJSON);
             waitOnce = true;
         }
     }

@@ -4,13 +4,14 @@ EXTERNAL changeSprite(character)
 -> main
 
 === main ====
-~ finishQuest("Otter")
+Ugh, so bored...
 + [I think I may have found something!]
     -> Give
 
 === Give ===
 Wow! So shiny!
 ~ changeSprite("otter")
+~ finishQuest("Otter")
 This is perfect! I'm gonna go play with this now. Bye!
     -> END
 

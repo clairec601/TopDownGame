@@ -7,7 +7,7 @@ public class QuestManager : MonoBehaviour
 
     public static QuestManager instance { get; private set; }
     public Dictionary<string, Quest> questMap;
-    public static int finishedCount;
+    public static int finishedCount = 0;
     private void Awake(){
         instance = this;
         questMap = CreateMap();
@@ -85,6 +85,7 @@ public class QuestManager : MonoBehaviour
         Quest quest = GetById(id);
         ChangeQuestState(quest.info.id, QuestState.FINISHED);
         finishedCount++;
+        Debug.Log(finishedCount);
     }
 
 }

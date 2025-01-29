@@ -12,7 +12,7 @@ public class MainCharJump : MonoBehaviour
     private bool isGrounded;
     private bool isJumping;
     public float jumpTimeCounter;
-    public float jumpTime;
+    float jumpTime = 0.4f;
     private bool isBreadColliding;
     [SerializeField] private GameObject dialogueTrigger;
     [SerializeField] private TextAsset inkJSON;
@@ -51,6 +51,9 @@ public class MainCharJump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (player.transform.position.y <= -11){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+        }
         if (isBreadColliding && Input.GetKeyDown(KeyCode.Space) && !BreadDialogueManager.instance.isPlaying){
             BreadDialogueManager.instance.EnterDialogue(inkJSON);
         }

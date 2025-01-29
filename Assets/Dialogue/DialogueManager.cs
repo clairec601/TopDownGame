@@ -16,6 +16,8 @@ public class DialogueManager : MonoBehaviour
     private TextMeshProUGUI[] choicesText;
     private Story currentStory; //uses Ink
     public bool isPlaying { get; private set; }
+    private static bool gameStarted;
+    [SerializeField] private TextAsset startInkJSON;
 
     private void Awake(){
         instance = this;
@@ -34,19 +36,23 @@ public class DialogueManager : MonoBehaviour
             choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>(); //get text from each choice
             index++;
         }
+
+        if (SceneManager.GetActiveScene().name == "MainGame" && GameObject.FindWithTag("Sock") && QuestManager.instance.CheckState("Bear") == QuestState.CAN_FINISH || QuestManager.instance.CheckState("Bear") == QuestState.FINISHED){
+            Destroy(GameObject.FindWithTag("Sock"));
+        }
     }
 
     private void Update(){
+        if (!gameStarted){
+            EnterDialogue(startInkJSON);
+            gameStarted = true;
+        }
         if (!isPlaying){
             return;
         }
 
         if (Input.GetKeyDown(KeyCode.Return)){
             CanContinue();
-        }
-
-        if (GameObject.FindWithTag("Sock") && QuestManager.instance.CheckState("Bear") == QuestState.CAN_FINISH || QuestManager.instance.CheckState("Bear") == QuestState.FINISHED){
-            Destroy(GameObject.FindWithTag("Sock"));
         }
     }
 
@@ -196,4 +202,5 @@ public class DialogueManager : MonoBehaviour
     public void MakeChoice(int choiceIndex){
         currentStory.ChooseChoiceIndex(choiceIndex);
     }
+
 }
