@@ -8,6 +8,9 @@ Talk to and help out each stuffed animal before waking back up!
 * Continue dialogue: 'return'
 * Movement: arrow keys ('up', 'down', 'right', 'left')
      * Jump (Bread Game): 'up'
+ 
+## Application Link
+Link to built version: https://drive.google.com/file/d/1wGxSRxVrYc1tnTNeW1-Z5gVDkVAGpM4K/view?usp=sharing
 
 ## Screenshots/GIFs
 <img width="606" alt="Screenshot 2025-01-29 at 6 35 49 PM" src="https://github.com/user-attachments/assets/4c171ed6-0228-4ab5-add2-cb0158e19733" />
