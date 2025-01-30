@@ -7,7 +7,11 @@ Talk to and help out each stuffed animal before waking back up!
 * Trigger dialogue: 'space'
 * Continue dialogue: 'return'
 * Movement: arrow keys ('up', 'down', 'right', 'left')
-     * Jump (Bread Game): 'up'
+     * Bread Game: jump using 'up', move using 'right' and 'left'
+     * Manatee Game: arrow keys (up', 'down', 'right', 'left') corresponding to arrows on screen
+     * Big Dinosaur Game: pluck grass using 'mouse click'
+Be sure to talk to characters <b> again </b> after completing a quest step to register the quest as completed! 
+    * ex: after you complete a game that required a scene change, talk to the character back in the main game scene
  
 ## Application Link
 Link to built version: https://drive.google.com/file/d/1wGxSRxVrYc1tnTNeW1-Z5gVDkVAGpM4K/view?usp=sharing
@@ -40,9 +44,13 @@ Made with Unity Editor Version 2022.3.16f1
     * Pixel Art: This was my first time trying out pixel art; I used a free app on my iPad to both design my sprites and scene items, and animate them as well. 
 * Challenges:
    *  I faced many, many challenges while making this game, and felt many, many emotions while doing so. 
-      * Preserving variables and data between scene changes 
-      * Preserving the state of the quests between scene changes
+      * Preserving variables and data between scene changes
+         * ex: if you collect coconut from tree, then proceed to start another character quest that requires a scene change, the game knows you still have the coconut in your possession
+      * Preserving the state of the quests and character-specific animations between scene changes
+         * quests do not revert back to 'CAN_START' state after scene change 
       * Creating my own sprites + animating them
+      * Transitioning between animations at appropriate times
+      * Debugging C# and system errors 
       * etc.
 
 ## Authors
