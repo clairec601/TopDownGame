@@ -7,19 +7,29 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 public class ManateeDialogueManager : MonoBehaviour
 {
+    public static ManateeDialogueManager instance;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private TextAsset startInkJSON;
     [SerializeField] private TextAsset inkJSON;
+
     private bool waitOnce;
+    public static bool waitToStart;
     
     public bool isPlaying { get; private set; }
     private Story currentStory; //uses Ink
         
 
+    // private void Awake(){
+    //     instance = this;
+    // }
     private void Start(){
         waitOnce = false;
+        waitToStart = false;
         isPlaying = false;
         dialoguePanel.SetActive(false);
+
+        EnterDialogue(startInkJSON);
     }
 
     private void Update(){
@@ -29,6 +39,7 @@ public class ManateeDialogueManager : MonoBehaviour
         }
 
         if (!isPlaying){
+            waitToStart = true;
             return;
         }
         if (Input.GetKeyDown(KeyCode.Return)){

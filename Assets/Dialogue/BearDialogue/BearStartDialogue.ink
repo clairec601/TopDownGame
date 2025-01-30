@@ -18,6 +18,8 @@ I have no idea where it could've gone... Now my paw's cold :(
 === Help ===
 ~ startQuest("Bear")
 Wow, thank you! I took my nap by those bushes over there, if that helps.
+Although...
+I forget which bushes...
 -> END
 
 == function startQuest(questid) ==

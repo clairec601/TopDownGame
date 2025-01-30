@@ -10,6 +10,7 @@ public class BigDinosaurDialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextAsset inkJSON;
+    [SerializeField] private TextAsset startInkJSON;
     public bool isPlaying { get; private set; }
 
     private Story currentStory; //uses Ink
@@ -17,6 +18,8 @@ public class BigDinosaurDialogueManager : MonoBehaviour
     private void Start(){
         isPlaying = false;
         dialoguePanel.SetActive(false);
+
+        EnterDialogue(startInkJSON);
     }
 
     private void Update(){

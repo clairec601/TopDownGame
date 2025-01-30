@@ -1,0 +1,1 @@
+When the arrows reach the blue line on the bottom, press the corresponding key!

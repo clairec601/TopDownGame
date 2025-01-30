@@ -5037,6 +5037,7 @@ MonoBehaviour:
   dialoguePanel: {fileID: 521208943}
   dialogueText: {fileID: 854597145}
   inkJSON: {fileID: 4900000, guid: 7d387939dd1ac451986b99d1f2f6e0e6, type: 3}
+  startInkJSON: {fileID: 4900000, guid: ec5aa3c519e9d41bd82946eff069116d, type: 3}
 --- !u!4 &1580782166
 Transform:
   m_ObjectHideFlags: 0

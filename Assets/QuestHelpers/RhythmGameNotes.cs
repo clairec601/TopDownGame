@@ -27,7 +27,8 @@ public class RhythmGameNotes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position -= new Vector3(0f, 1.5f * Time.deltaTime, 0f);
+        if (ManateeDialogueManager.waitToStart){
+            transform.position -= new Vector3(0f, 1.5f * Time.deltaTime, 0f);
 
             if (canPress){
                 if (Input.GetKeyDown(KeyPress)){
@@ -37,6 +38,6 @@ public class RhythmGameNotes : MonoBehaviour
                     Destroy(this.gameObject);
                 }
             }
-        
+        } 
     }
 }

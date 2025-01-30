@@ -11,6 +11,7 @@ public class BreadDialogueManager : MonoBehaviour
     public static BreadDialogueManager instance;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private TextAsset startInkJSON;
     private Story currentStory; //uses Ink
     public bool isPlaying { get; private set; }
 
@@ -24,6 +25,7 @@ public class BreadDialogueManager : MonoBehaviour
         isPlaying = false;
         dialoguePanel.SetActive(false);
 
+        EnterDialogue(startInkJSON);
     }
 
     private void Update(){
